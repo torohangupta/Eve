@@ -1,0 +1,23 @@
+{
+  "name": "eve",
+  "version": "1.0.0",
+  "description": "A derivative of my first bot, Wall-E, Eve manages the Gamers Discord Server",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torohangupta/eve.git"
+  },
+  "author": "Rohan Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/torohangupta/eve/issues"
+  },
+  "homepage": "https://github.com/torohangupta/eve#readme",
+  "dependencies": {
+    "discord.js": "^13.0.0-dev.4f1f32f.1627517033"
+  }
+}
