@@ -3,8 +3,6 @@ const Discord = require('discord.js');
 const { prefix, userIDs } = require('./resources/config.json');
 const { permsChecker, logCommandRun, logCommandError, recievedDM } = require(`./dependencies/runtime.js`);
 
-fs.readdirSync(`./`).includes(`.env`) ? require("dotenv").config() : ``;
-
 // create new discord client with proper intents
 const client = new Discord.Client({ intents: ['GUILDS', 'GUILD_MESSAGES', `GUILD_VOICE_STATES`, `GUILD_MESSAGE_REACTIONS`, `DIRECT_MESSAGES`, `GUILD_PRESENCES`], partials: ['CHANNEL'] });
 client.commands = new Discord.Collection();

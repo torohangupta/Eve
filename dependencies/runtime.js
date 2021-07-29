@@ -13,7 +13,7 @@ function permsChecker(command, message, args) {
     }
 
     // check for channel type
-    if (command.guildOnly && message.channel.type === 'dm') {
+    if (command.guildOnly && message.channel.type === 'DM') {
         message.channel.send(`You need to be in a server to use this command!`);
         return false;
     }
