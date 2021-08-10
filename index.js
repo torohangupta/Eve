@@ -3,6 +3,8 @@ const Discord = require('discord.js');
 const { prefix, userIDs } = require('./resources/config.json');
 const { permsChecker, logCommandRun, logCommandError, recievedDM } = require(`./dependencies/runtime.js`);
 
+fs.readdirSync(`./`).includes(`.env`) ? require("dotenv").config() : ``;
+
 // create new discord client with proper intents
 const client = new Discord.Client({ intents: ['GUILDS', 'GUILD_MESSAGES', `GUILD_VOICE_STATES`, `GUILD_MESSAGE_REACTIONS`, `DIRECT_MESSAGES`, `GUILD_PRESENCES`], partials: ['CHANNEL'] });
 client.commands = new Discord.Collection();
@@ -22,6 +24,18 @@ const eventFiles = fs.readdirSync(`./events`).filter(file => file.endsWith(`.js`
 for (const file of eventFiles) {
     const event = require(`./events/${file}`);
     event.once ? client.once(event.name, (...args) => event.execute(...args, client)) : client.on(event.name, (...args) => event.execute(...args, client));
+}
+
+const buttonFiles = fs.readdirSync(`./interactions/buttons`).filter(file => file.endsWith('.js'));
+for (const file of buttonFiles) {
+	const button = require(`./interactions/buttons/${file}`);
+	client.buttons.set(button.id, button)
+}
+
+const slashCommandsList = fs.readdirSync(`./interactions/slashcommands`).filter(file => file.endsWith('.js'));
+for (const file of slashCommandsList) {
+	const slashcommand = require(`./interactions/slashcommands/${file}`);
+	client.slashCommands.set(slashcommand.name, slashcommand)
 }
 
 // Command handling

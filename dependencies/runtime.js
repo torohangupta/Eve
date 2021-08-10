@@ -35,7 +35,6 @@ function permsChecker(command, message, args) {
 
 function logCommandRun(client, command, message) {
     console.log(`Running ${command.name}, requested by ${message.author.username}`);
-    console.log(`here`)
     client.channels.cache.get(consoleChannel).send(`**Wall-E - Command Run**\n\`\`\`\nUser: ${message.author.username}\nGuild: ${message.member.guild.name}\nChannel: ${message.channel.name}\n\nCommand: ${command.name}\nMessage Content: ${message}\n\`\`\``);
     return;
 }

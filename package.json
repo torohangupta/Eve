@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/torohangupta/eve#readme",
   "dependencies": {
-    "discord.js": "^13.0.0-dev.4f1f32f.1627517033"
+    "axios": "^0.21.1",
+    "discord.js": "^13.0.1",
+    "dotenv": "^10.0.0"
   }
 }

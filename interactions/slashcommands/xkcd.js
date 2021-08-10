@@ -14,8 +14,6 @@ module.exports = {
             const url = `https://xkcd.com/${comicNumber}/info.0.json`;
             const response = await axios.get(url);
 
-            console.log(response)
-
             const comic = new MessageEmbed()
                 .setTitle(response.data.title)
                 .setDescription(`xkcd #${comicNumber} | ${response.data.month}/${response.data.year}`)
