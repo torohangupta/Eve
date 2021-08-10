@@ -1,0 +1,10 @@
+{
+    "name": "insult",
+    "description": "Insults a user",
+    "options": [{
+		"name": "target",
+		"type": "USER",
+		"description": "The user to insult",
+		"required": true
+	}]
+}
