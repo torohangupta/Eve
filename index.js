@@ -57,5 +57,18 @@ client.on('messageCreate', message => {
 
 });
 
+// interaction handler (slash commands)
+client.on('interactionCreate', async interaction => {
+    if (!interaction.isCommand()) return;
+
+    const slashCommand = client.slashCommands.get(interaction.commandName);
+    if (!slashCommand) {
+        interaction.reply({ content: `That doesn't work currently. If you think this is a mistake, please submit a bug report on my GitHub!\nhttps://github.com/torohangupta/Wall-E`, ephemeral: true });
+        return console.log(`${interaction.member.user.username} used a broken slash command!`);
+    }
+
+	await slashCommand.execute(interaction);
+});
+
 // login to Discord with bot token
 client.login(process.env.TOKEN);
