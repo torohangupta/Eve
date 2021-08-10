@@ -4,7 +4,7 @@ module.exports = {
 
     name: `penis`,
     aliases: [`penis`, `dick`],
-    description: `Using an expert algorithm, Wall-E determines the current length of your penis.`,
+    description: `Using an expert algorithm, EVE determines the current length of your penis.`,
     usage: ``,
     requiredPermissions: ``,
 
